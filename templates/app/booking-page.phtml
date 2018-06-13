@@ -30,6 +30,8 @@
 					echo "<tr><td>".$booking->id."</td><td>".$booking->username."</td><td>".$booking->reason."</td><td>".$booking->requested_date."</td><td>".$booking->created."</td><td><a href='/bookings/edit/".$booking->id."'>Edit</a>&nbsp;<a href='/bookings/delete/".$booking->id."'>Delete</a></td></tr>";
 				}
 				echo "</table>";
+			}else{
+				echo "<h2>There are no Bookings. Consider Creating one!</h2>";
 			}
 		
 		?>
