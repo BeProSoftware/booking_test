@@ -40,7 +40,12 @@ class AjaxPageAction implements ServerMiddlewareInterface
 			foreach($_POST as $key => $value){
 				$data = json_decode($key, true);
 			}
+			if(empty($data["username"])){
+				echo "Please enter a username";
+				exit;
+			}
 			$data["requested_date"] = date("Y-m-d H:i:s", strtotime(str_replace("_", " ", $data["requested_date"]))); // format for the database
+
 			$result = $this->bookingsTable->save($data);
 		}
 		
