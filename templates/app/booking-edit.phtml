@@ -30,7 +30,7 @@ foreach($bookings as $book)$raw=$book;
 				$scope.user.id = "<?=$raw->id?>";
 				$scope.user.username = "<?=$raw->username?>";
 				$scope.user.reason = "<?=$raw->reason?>";
-				$scope.user.requested_date = "<?=date("m/d/Y H:i:s", strtotime($raw->requested_date))?>";
+				$scope.user.requested_date = "<?=$raw->requested_date?>";
 				$scope.hideElement = true;
 				$scope.formConfirmation = "Enter Appointment";
 				$scope.submitForm = function() {
@@ -59,11 +59,11 @@ foreach($bookings as $book)$raw=$book;
 				<form name="userForm" ng-submit="submitForm()">
 					<input type="hidden" ng-model="user.id">
 					<p>Username : <input type="text" ng-model="user.username" placeholder="username" required></p>
-					<p>Reason : <select ng-model="user.reason" placeholder="MM-dd-yyyyTHH:mm:ss">
+					<p>Reason : <select ng-model="user.reason">
 						<option value="abc">abc</option>
 						<option value="fun">fun</option>
 					</select></p>
-					<p>Date/Time : <input type="datetime"  placeholder="select" ng-model="user.requested_date" required></p>
+					<p>Date/Time : <input type="text"  placeholder="select" ng-model="user.requested_date" required></p>
 					<p><button type="submit" class="btn btn-primary">Submit</button></p>
 				</form>
 			</div>

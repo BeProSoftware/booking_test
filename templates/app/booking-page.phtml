@@ -24,7 +24,7 @@
 		<button><a href="http://bookings.localhost/bookings/add">add booking</a></button>
 		<?php 
 			if(count($bookings) > 0){
-				echo "<table>
+				echo "<table id='bookings_table'>
 						<tr><td>ID</td><td>Username</td><td>Reason</td><td>requested_date</td><td>Created</td><td>Actions</td></tr>"; 
 				foreach($bookings as $booking){
 					echo "<tr><td>".$booking->id."</td><td>".$booking->username."</td><td>".$booking->reason."</td><td>".$booking->requested_date."</td><td>".$booking->created."</td><td><a href='/bookings/edit/".$booking->id."'>Edit</a>&nbsp;<a href='/bookings/delete/".$booking->id."'>Delete</a></td></tr>";
