@@ -1,2 +1,4 @@
 # booking_test
-Zend Expressive application with Angular ajax booking form
+Zend Expressive CRUD application with Angular ajax booking form
+
+Add and Edit forms use angular JS
